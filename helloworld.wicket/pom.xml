@@ -24,6 +24,7 @@
   <properties>
     <wicket.version>1.5.4</wicket.version>
     <jetty.version>7.5.0.v20110901</jetty.version>
+    <scala.version>2.9.1</scala.version>
   </properties>
   <dependencies>
     <!--  WICKET DEPENDENCIES -->
@@ -32,13 +33,6 @@
       <artifactId>wicket-core</artifactId>
       <version>${wicket.version}</version>
     </dependency>
-    <!-- OPTIONAL DEPENDENCY
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-		-->
 
 	<!-- LOGGING DEPENDENCIES - LOG4J -->
     <dependency>
@@ -50,6 +44,13 @@
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.16</version>
+    </dependency>
+
+    <!--  SCALA DEPENDENCY -->
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
     </dependency>
 
 	<!--  JUNIT DEPENDENCY FOR TESTING -->
@@ -70,6 +71,8 @@
   </dependencies>
 
   <build>
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
     <resources>
       <resource>
         <filtering>false</filtering>
@@ -77,12 +80,12 @@
       </resource>
       <resource>
         <filtering>false</filtering>
-        <directory>src/main/java</directory>
+        <directory>src/main/scala</directory>
         <includes>
           <include>**</include>
         </includes>
         <excludes>
-          <exclude>**/*.java</exclude>
+          <exclude>**/*.scala</exclude>
         </excludes>
       </resource>
     </resources>
@@ -93,12 +96,12 @@
       </testResource>
       <testResource>
         <filtering>false</filtering>
-        <directory>src/test/java</directory>
+        <directory>src/test/scala</directory>
         <includes>
           <include>**</include>
         </includes>
         <excludes>
-          <exclude>**/*.java</exclude>
+          <exclude>**/*.scala</exclude>
         </excludes>
       </testResource>
     </testResources>
@@ -114,6 +117,27 @@
           <optimize>true</optimize>
           <debug>true</debug>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <version>2.15.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+            <configuration>
+              <args>
+                <arg>-make:transitive</arg>
+                <arg>-dependencyfile</arg>
+                <arg>${project.build.directory}/.scala_dependencies</arg>
+              </args>
+              <scalaVersion>${scala.version}</scalaVersion>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
@@ -146,18 +170,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <!--repositories>
-    <repository>
-      <id>Apache Nexus</id>
-      <url>https://repository.apache.org/content/repositories/snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories-->
 
 </project>

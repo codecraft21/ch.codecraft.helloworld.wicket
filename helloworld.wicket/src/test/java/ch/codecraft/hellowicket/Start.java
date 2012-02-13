@@ -1,4 +1,4 @@
-package ch.codecraft;
+package ch.codecraft.hellowicket;
 
 import org.apache.wicket.util.time.Duration;
 import org.eclipse.jetty.http.ssl.SslContextFactory;
