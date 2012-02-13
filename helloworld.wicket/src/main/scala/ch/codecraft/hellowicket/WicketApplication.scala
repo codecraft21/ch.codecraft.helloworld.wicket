@@ -13,6 +13,6 @@ import org.apache.wicket.protocol.http.WebApplication
  */
 class WicketApplication extends WebApplication {
 
-  def getHomePage = classOf[HomePage]
+  override def getHomePage = classOf[HomePage]
 
 }
