@@ -11,17 +11,11 @@ import org.eclipse.jetty.server.ssl.SslSocketConnector
 import org.eclipse.jetty.util.resource.Resource
 import org.eclipse.jetty.webapp.WebAppContext
 
-/**
- * Code Craft Software, 2012
- *
- * @author chris
- *
- */
 object Start {
 
     def main(args: Array[String]): Unit = {
         val timeout = Duration.ONE_HOUR.getMilliseconds
-    
+
         val server = new Server()
         val connector = new SocketConnector()
 
@@ -79,9 +73,9 @@ object Start {
             server.stop()
             server.join()
         } catch {
-          case e: Exception =>
-            e.printStackTrace()
-            System.exit(1)
+            case e: Exception =>
+                e.printStackTrace()
+                System.exit(1)
         }
     }
 
