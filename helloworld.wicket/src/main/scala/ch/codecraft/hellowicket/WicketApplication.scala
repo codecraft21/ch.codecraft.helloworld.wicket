@@ -11,10 +11,4 @@ class WicketApplication extends WebApplication {
 
     override def getHomePage = classOf[HomePage]
 
-    //TODO not needed for config type 'deployment' 
-    override def init: Unit = {
-        super.init
-        getResourceSettings.setResourcePollFrequency(null)
-    }
-
 }
