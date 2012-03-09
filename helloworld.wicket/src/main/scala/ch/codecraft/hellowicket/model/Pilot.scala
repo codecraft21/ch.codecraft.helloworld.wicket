@@ -4,4 +4,4 @@
 package ch.codecraft.hellowicket.model
 
 //TODO id, rank...
-case class Pilot(var name: String)
+case class Pilot(val name: String, val nick: String)
