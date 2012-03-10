@@ -3,18 +3,9 @@
  */
 package ch.codecraft.hellowicket
 
-import org.apache.wicket.util.tester.WicketTester
-import org.junit.Before
 import org.junit.Test
 
-class TestHomePage extends WicketTester {
-
-    var tester: WicketTester = _
-
-    @Before
-    def setUp(): Unit = {
-        tester = new WicketTester(new WicketApplication())
-    }
+class TestHomePage extends WicketTesterTrait {
 
     @Test
     def homepageRendersSuccessfully(): Unit = {
