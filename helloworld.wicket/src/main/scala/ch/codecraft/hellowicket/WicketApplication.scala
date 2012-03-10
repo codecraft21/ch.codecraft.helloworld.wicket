@@ -11,4 +11,10 @@ class WicketApplication extends WebApplication {
 
     override def getHomePage = classOf[HomePage]
 
+    override def init: Unit = {
+        super.init()
+        
+        mountPage("/roster", classOf[RosterPage])
+    }
+
 }
