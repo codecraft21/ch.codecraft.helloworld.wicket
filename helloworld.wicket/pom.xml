@@ -26,7 +26,7 @@
     <wicket.version>1.5.4</wicket.version>
     <jetty.version>7.5.0.v20110901</jetty.version>
     <scala.version>2.9.2</scala.version>
-    <gae.version>1.6.4</gae.version>
+    <gae.version>1.7.0</gae.version>
   </properties>
   <dependencies>
     <!--  WICKET DEPENDENCIES -->
