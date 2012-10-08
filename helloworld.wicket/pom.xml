@@ -26,8 +26,8 @@
     <wicket.version>1.5.4</wicket.version>
     <jetty.version>7.5.0.v20110901</jetty.version>
     <scala.version>2.9.2</scala.version>
-    <gae.version>1.7.0</gae.version>
   </properties>
+
   <dependencies>
     <!--  WICKET DEPENDENCIES -->
     <dependency>
@@ -42,11 +42,6 @@
       <version>${wicket.version}</version>
     </dependency>
     -->
-    <dependency>
-      <groupId>org.wicketstuff</groupId>
-      <artifactId>wicketstuff-gae-initializer</artifactId>
-      <version>${wicket.version}</version>
-    </dependency>
 
 	<!-- LOGGING DEPENDENCIES - LOG4J -->
     <dependency>
@@ -182,19 +177,6 @@
           <downloadSources>true</downloadSources>
         </configuration>
       </plugin>
-      <!--plugin>
-        <groupId>net.kindleit</groupId>
-        <artifactId>maven-gae-plugin</artifactId>
-        <version>0.9.2-SNAPSHOT</version>
-        <dependencies>
-          <dependency>
-            <groupId>net.kindleit</groupId>
-            <artifactId>gae-runtime</artifactId>
-            <version>${gae.version}</version>
-            <type>pom</type>
-          </dependency>
-        </dependencies>
-      </plugin-->
     </plugins>
     <pluginManagement>
     	<plugins>
