@@ -5,6 +5,7 @@
 /.settings
 /.settings/*
 /.cache
+/helloworld.wicket.iml
 /src/main/webapp/WEB-INF/lib
 /src/main/webapp/WEB-INF/lib/*
 /src/main/webapp/WEB-INF/classes.timestamp
