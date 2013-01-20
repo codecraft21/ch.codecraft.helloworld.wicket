@@ -1,8 +1,7 @@
-/target
 /target/*
+/project/target/*
 /.project
 /.classpath
-/.settings
 /.settings/*
 /.cache
 /helloworld.wicket.iml
