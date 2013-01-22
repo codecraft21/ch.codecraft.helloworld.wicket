@@ -3,4 +3,8 @@ scala:
   - "2.10.0"
 jdk:
   - openjdk6
-script: sh -c 'cd helloword.wicket' && sbt ++$TRAVIS_SCALA_VERSION package
+env:
+  global:
+    - REPO="codecraft21/ch.codecraft.helloworld.wicket/helloworld.wicket"
+    - CI_HOME=`pwd`/$REPO
+script: sh -c 'cd $CI_HOME' && sbt ++$TRAVIS_SCALA_VERSION package
