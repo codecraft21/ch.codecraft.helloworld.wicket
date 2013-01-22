@@ -5,6 +5,6 @@ jdk:
   - openjdk6
 env:
   global:
-    - REPO="codecraft21/ch.codecraft.helloworld.wicket/helloworld.wicket"
+    - REPO="codecraft21/ch.codecraft.helloworld.wicket"
     - CI_HOME=`pwd`/$REPO
-script: sh -c 'cd $CI_HOME' && sbt ++$TRAVIS_SCALA_VERSION package
+script: sh -c 'cd $CI_HOME/helloworld.wicket' && sbt ++$TRAVIS_SCALA_VERSION package
