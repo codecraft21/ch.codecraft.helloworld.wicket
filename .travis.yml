@@ -1,10 +1,5 @@
-language: scala
-scala:
-  - "2.10.0"
-jdk:
-  - openjdk6
 env:
   global:
     - REPO="codecraft21/ch.codecraft.helloworld.wicket"
     - CI_HOME=`pwd`/$REPO
-script: sh -c 'cd $CI_HOME/helloworld.wicket' && sbt ++$TRAVIS_SCALA_VERSION package
+script: build.sh
