@@ -2,4 +2,4 @@ env:
   global:
     - REPO="codecraft21/ch.codecraft.helloworld.wicket"
     - CI_HOME=`pwd`/$REPO
-script: build.sh
+script: "cd $CI_HOME && build.sh"
