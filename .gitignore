@@ -5,6 +5,7 @@
 /.settings
 /.settings/*
 /.cache
+/.idea*
 /src/main/webapp/WEB-INF/lib
 /src/main/webapp/WEB-INF/lib/*
 /src/main/webapp/WEB-INF/classes.timestamp
