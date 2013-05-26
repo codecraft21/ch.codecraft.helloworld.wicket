@@ -4,7 +4,7 @@
 package ch.codecraft.hellowicket
 
 import org.apache.wicket.util.time.Duration
-import org.eclipse.jetty.util.ssl.SslContextFactory
+import org.eclipse.jetty.http.ssl.SslContextFactory
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.server.bio.SocketConnector
 import org.eclipse.jetty.server.ssl.SslSocketConnector
@@ -39,7 +39,7 @@ object Start {
             val factory = new SslContextFactory()
             factory.setKeyStoreResource(keystore)
             factory.setKeyStorePassword("wicket")
-            factory.setTrustStoreResource(keystore)
+            factory.setTrustStore(keystore)
             factory.setKeyManagerPassword("wicket")
             val sslConnector = new SslSocketConnector(factory)
             sslConnector.setMaxIdleTime(timeout.toInt)

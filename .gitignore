@@ -1,1 +1,14 @@
-.idea/*
+/target
+/target/*
+/.project
+/.classpath
+/.settings
+/.settings/*
+/.cache
+/src/main/webapp/WEB-INF/lib
+/src/main/webapp/WEB-INF/lib/*
+/src/main/webapp/WEB-INF/classes.timestamp
+/src/main/webapp/WEB-INF/classes
+/src/main/webapp/WEB-INF/classes/*
+/project/target
+/project/project/target
